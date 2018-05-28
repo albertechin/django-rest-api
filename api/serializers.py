@@ -23,7 +23,7 @@ class UserProfileSerializer(serializers.ModelSerializer):
             name = validated_data['name']
         )
 
-        user.set_password(validated_data['email'],)
+        user.set_password(validated_data['password'],)
         user.save() 
 
         return user
