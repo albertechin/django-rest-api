@@ -73,3 +73,17 @@ class ProfileFeedItem(models.Model):
         """return the model as a string."""
 
         return self.status_text
+
+class UserLocation(models.Model):
+    """User locations"""
+    user_profile = models.ForeignKey('UserProfile', on_delete=models.CASCADE)
+    lat = models.CharField(max_length = 15)
+    lng = models.CharField(max_length = 15)
+    created_on = models.DateTimeField(auto_now_add = True)
+
+    def __str__(self):
+        """return the model as a string."""
+        location = "lat: "+self.lat+"; lng: "+self.lng
+        return location
+
+
